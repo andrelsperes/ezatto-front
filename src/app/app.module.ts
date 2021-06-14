@@ -46,8 +46,6 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { TokenInterceptorService } from './shared/filters/token-interceptor.service';
 import { RelatorioModule } from './pages/relatorio/relatorio.module';
 import { RelatorioRoutingModule } from './pages/relatorio/relatorio-routing.module';
-import { GestaoAuditorModule } from './pages/gestao-auditor/gestao-auditor.module';
-import { GestaoAuditorRoutingModule } from './pages/gestao-auditor/gestao-auditor-routing.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -87,8 +85,6 @@ import { GestaoAuditorRoutingModule } from './pages/gestao-auditor/gestao-audito
     GestaoNotasRoutingModule,
     RelatorioModule,
     RelatorioRoutingModule,
-    GestaoAuditorModule,
-    GestaoAuditorRoutingModule,
   ],
   providers:[
     { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptorService, multi: true},
