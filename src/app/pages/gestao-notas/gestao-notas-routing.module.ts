@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
-import { GestaoNotasComponent } from './gestao-notas.component.ts';
+import { GestaoNotasComponent } from './gestao-notas.component';
 import { ConsultaAutuacaoComponent } from './consulta-autuacao/consulta-autuacao.component';
 import { UploadArquivosComponent } from './upload-arquivos/upload-arquivos.component';
 import { VisualizarAnexoComponent } from './visualizar-anexo/visualizar-anexo.component';

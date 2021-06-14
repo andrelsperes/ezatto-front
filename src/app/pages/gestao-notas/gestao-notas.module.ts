@@ -9,7 +9,7 @@ import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import { MyDatePickerModule } from 'mydatepicker';
 import { NgxMaskModule } from 'ngx-mask';
 import { NgxMyDatePickerModule } from 'ngx-mydatepicker';
-import { GestaoNotasComponent } from './gestao-notas.component.ts';
+import { GestaoNotasComponent } from './gestao-notas.component';
 import { GestaoNotasRoutingModule } from './gestao-notas-routing.module';
 import { ConsultaAutuacaoComponent } from './consulta-autuacao/consulta-autuacao.component';
 import { UploadArquivosComponent } from './upload-arquivos/upload-arquivos.component';

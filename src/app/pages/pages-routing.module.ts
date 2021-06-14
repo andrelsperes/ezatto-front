@@ -40,11 +40,6 @@ const routes: Routes = [{
         .then(m => m.RelatorioModule),
     },
     {
-      path: 'gestao-auditor',
-      loadChildren: () => import('./gestao-auditor/gestao-auditor.module')
-        .then(m => m.GestaoAuditorModule),
-    },
-    {
       path: 'layout',
       loadChildren: () => import('./layout/layout.module')
         .then(m => m.LayoutModule),
