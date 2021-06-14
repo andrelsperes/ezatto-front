@@ -1,0 +1,120 @@
+<div class="box-content">
+    <div class="row">
+        <div class="col-md-12 col-xs-12">
+            <nb-card>
+                <nb-card-header class="amplus-header mat-autocomplete-panel">
+                    <div class="row">
+                        <div class="back-link px-2">
+                            <a (click)="previousPage()" aria-label="Back">
+                                <nb-icon icon="arrow-back" title="Voltar"></nb-icon>
+                            </a>
+                        </div>
+                        <div class="title">
+                            Cadastro de Agentes
+                        </div>
+                    </div>
+                </nb-card-header>
+                <div class="dialog-body p-3">
+                    <form id="form-cadastro" [formGroup]="formCadastroUsuario">
+                        <div class="col-md-12 col-xs-12">
+                            <div class="form-row align-items-center">
+                                <div class="form-group col-md-5">
+                                    <div class="form-group">
+                                        <label for="inputnomeUsuario">Nome*</label>
+                                        <input class="form-control" name="nomeUsuario" id="nomeUsuario" type="text"
+                                            style="text-transform: uppercase;"
+                                            [formControl]="formCadastroUsuario.controls.nomeUsuario"
+                                            formControlName="nomeUsuario" maxlength="200" />
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <div class="form-group">
+                                        <label for="inputcpf">CPF*</label>
+                                        <input class="form-control" name="cpf" id="cpf" type="text"
+                                            [formControl]="formCadastroUsuario.controls.cpf" formControlName="cpf"
+                                            mask="000.000.000-00" maxlength="14" />
+                                    </div>
+                                    <div *ngIf="formCadastroUsuario.get('cpf').getError('cpfNotValid')"> 
+                                        O CPF não é válido.
+                                      </div>
+                                </div>
+                                <div class="form-group col-md-2">
+                                    <div class="form-group">
+                                        <label for="inputmatricula">Matricula*</label>
+                                        <input class="form-control" name="matricula" id="matricula" type="text"
+                                            [formControl]="formCadastroUsuario.controls.matricula" formControlName="matricula" maxlength="14" />
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-2">
+                                    <div class="form-group">
+                                        <label for="status">Status*</label>
+                                        <select class="form-control" [formControl]="formCadastroUsuario.controls.status"
+                                            formControlName="status">
+                                            <option value="" selected>SELECIONE</option>
+                                            <option *ngFor="let status of listCardStatus" value="{{ status.status }}">
+                                                {{ status.descricao }}
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <div class="form-group">
+                                        <label for="exampleInputemail">Email*</label>
+                                        <input class="form-control" name="email" id="email" type="text"
+                                            [formControl]="formCadastroUsuario.controls.email" formControlName="email"
+                                            maxlength="50" />
+                                    </div>
+                                </div>                               
+                                <div class="form-group col-md-2">
+                                    <div class="form-group">
+                                        <label for="sexo">Sexo*</label>
+                                        <select class="form-control" [formControl]="formCadastroUsuario.controls.sexo"
+                                            formControlName="sexo">
+                                            <option value="" selected>SELECIONE</option>
+                                            <option *ngFor="let sexo of listCardSexo" value="{{ sexo.sexo }}">
+                                                {{ sexo.descricao }}
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-2">
+                                    <div class="form-group">
+                                        <label for="inputsenha">Senha*</label>
+                                        <input class="form-control" name="senha" id="senha" type="text"
+                                            [formControl]="formCadastroUsuario.controls.senha" formControlName="senha" maxlength="10" />
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-2">
+                                    <div class="form-group">
+                                        <label for="inputtelefone">Telefone*</label>
+                                        <input class="form-control" name="telefone" id="telefone" type="text"
+                                            [formControl]="formCadastroUsuario.controls.telefone"
+                                            formControlName="telefone" mask="(00)00000-0000" maxlength="14" />
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-2">
+                                    <div class="form-group">
+                                        <label for="exampledataCadastro">Data Cadastro*</label>
+                                        <my-date-picker name="mydate" formControlName="dataCadastro" maxlength="10"
+                                            [options]="myDatePickerOptions">
+                                        </my-date-picker>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row m-3">
+                            <div class="text-right navbar-collapse">
+                                <button class="btn btn-primary" (click)="fecharForm()">
+                                    FECHAR
+                                </button>
+                                <button class="btn btn-success" (click)="saveFormCadastro(formCadastroUsuario.value)">
+                                    SALVAR
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </nb-card>
+        </div>
+    </div>
+</div>

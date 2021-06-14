@@ -1,0 +1,18 @@
+<div class="header-container">
+  <div class="logo-container">
+    <a (click)="toggleSidebar(false)" href="#" class="sidebar-toggle">
+      <nb-icon icon="menu-2-outline"></nb-icon>
+    </a>
+    <div class="col-md-12 col-xs-12">
+      <a class="logo" href="#" (click)="navigateHome()"></a>
+      <!--<img class="ml-lg-n4 w-100" src="assets/images/logo_multa.jpg" id="icon" alt="User Icon" />-->
+    </div>
+  </div>
+</div>
+
+<div class="header-container">
+
+      <nb-user class="list-group-item ng-star-inserted user-name" [nbContextMenu]="userMenu" [name]="user?.name" nbContextMenuTag="context-user">
+      </nb-user>
+
+</div>

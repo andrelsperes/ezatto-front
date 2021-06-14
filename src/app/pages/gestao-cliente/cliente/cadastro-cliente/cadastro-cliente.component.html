@@ -1,0 +1,221 @@
+<div class="box-content">
+    <div class="row">
+        <div class="col-md-12 col-xs-12">
+            <nb-card>
+                <nb-card-header class="amplus-header mat-autocomplete-panel">
+                    <div class="row">
+                        <div class="back-link px-2">
+                            <a (click)="previousPage()" aria-label="Back">
+                                <nb-icon icon="arrow-back" title="Voltar"></nb-icon>
+                            </a>
+                        </div>
+                        <div class="title">
+                            Cadastro de Cliente
+                        </div>
+                    </div>
+                </nb-card-header>
+                <div class="dialog-body p-3">
+                    <form id="form-cadastro" [formGroup]="formCadastroCliente">
+                        <div class="col-md-12 col-xs-12">
+                            <div class="form-row align-items-center">
+                                <div class="form-group col-md-3">
+                                    <div class="form-group">
+                                        <label for="inputcpfCnpj">CPF/CNPJ*</label>
+                                        <input class="form-control" name="cpfCnpj" id="cpfCnpj" type="text"
+                                            [formControl]="formCadastroCliente.controls.cpfCnpj"
+                                            formControlName="cpfCnpj" [(ngModel)]="cnpjCpf" [mask]="getCpfCnpjMask()" />
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-5">
+                                    <div class="form-group">
+                                        <label for="inputrazaoSocial">Razão Social*</label>
+                                        <input class="form-control" name="razaoSocial" id="razaoSocial" type="text"
+                                            style="text-transform: uppercase;"
+                                            [formControl]="formCadastroCliente.controls.razaoSocial"
+                                            formControlName="razaoSocial" maxlength="200" />
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <div class="form-group">
+                                        <label for="inputranomeFantasia">Nome Fantasia*</label>
+                                        <input class="form-control" name="nomeFantasia" id="nomeFantasia" type="text"
+                                            style="text-transform: uppercase;"
+                                            [formControl]="formCadastroCliente.controls.nomeFantasia"
+                                            formControlName="nomeFantasia" maxlength="200" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row align-items-center">
+                                <div class="form-group col-md-6">
+                                    <div class="form-group">
+                                        <label for="inputnomeResponsavel">Nome Responsável*</label>
+                                        <input class="form-control" name="nomeResponsavel" id="nomeResponsavel"
+                                            type="text" style="text-transform: uppercase;"
+                                            [formControl]="formCadastroCliente.controls.nomeResponsavel"
+                                            formControlName="nomeResponsavel" />
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <div class="form-group">
+                                        <label for="exampleInputemail">Email*</label>
+                                        <input class="form-control" name="email" id="email" type="text"
+                                            style="text-transform: uppercase;"
+                                            [formControl]="formCadastroCliente.controls.email" formControlName="email"
+                                            maxlength="50" />
+                                    </div>
+                                </div>                               
+                            </div>
+                            <div class="form-row align-items-center">
+                                <div class="form-group col-md-2">
+                                    <div class="form-group">
+                                        <label for="inputvalorPlano">Valor Plano</label>
+                                        <input autocomplete="off" currencyMask
+                                            [options]="{ prefix: 'R$ ', thousands: '.', decimal: ','}"
+                                            class="form-control" name="valorPlano" id="valorPlano" type="text"
+                                            [formControl]="formCadastroCliente.controls.valorPlano"
+                                            formControlName="valorPlano" (keypress)="number($event)" />
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-2">
+                                    <div class="form-group">
+                                        <label for="inputqtdAgente">Quantidade Agente*</label>
+                                        <input class="form-control" name="qtdAgente" id="qtdAgente" type="text"
+                                            [formControl]="formCadastroCliente.controls.qtdAgente"
+                                            (keypress)="numberOnly($event)" formControlName="qtdAgente" />
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-2">
+                                    <div class="form-group">
+                                        <label for="status">Status*</label>
+                                        <select class="form-control" [formControl]="formCadastroCliente.controls.status"
+                                            formControlName="status">
+                                            <option value="" selected>SELECIONE</option>
+                                            <option *ngFor="let status of tipoStatus" value="{{ status.status }}">
+                                                {{ status.descricao }}
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-2">
+                                    <div class="form-group">
+                                        <label for="inputtelefone">Telefone*</label>
+                                        <input class="form-control" name="telefone" id="telefone" type="text"
+                                            [formControl]="formCadastroCliente.controls.telefone"
+                                            formControlName="telefone" mask="(00)00000-0000" maxlength="14" />
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-2">
+                                    <div class="form-group">
+                                        <label for="exampledataCadastro">Data Cadastro*</label>
+                                        <my-date-picker name="mydate" formControlName="dataCadastro" maxlength="10"
+                                            [options]="myDatePickerOptions" (keypress)="numberOnly($event)">
+                                        </my-date-picker>
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-2">
+                                    <div class="form-group">
+                                        <label for="exampledataVigencia">Data Vigência</label>
+                                        <my-date-picker name="mydate" formControlName="dataVigencia" maxlength="10"
+                                            [options]="myDatePickerOptions" (keypress)="numberOnly($event)">
+                                        </my-date-picker>
+                                    </div>
+                                </div>
+                            </div>
+                                <div class="form-row align-items-center">
+                                <div class="form-group col-md-2">
+                                    <div class="form-group">
+                                        <label for="exampleInputcep">CEP</label>
+                                        <input class="form-control" name="cep" id="cep" type="text"
+                                            [formControl]="formCadastroCliente.controls.cep" formControlName="cep"
+                                            mask="00000-000" maxlength="20" />
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-2">
+                                    <div class="form-group">
+                                        <label for="inputnumero">Número</label>
+                                        <input class="form-control" name="numero" id="numero" type="text"
+                                            [formControl]="formCadastroCliente.controls.numero" formControlName="numero"
+                                            (keypress)="numberOnly($event)" maxlength="10" />
+                                    </div>
+                                </div>                            
+                                <div class="form-group col-md-4">
+                                    <div class="form-group">
+                                        <label for="inputlogradouro">Rua</label>
+                                        <input class="form-control" name="logradouro" id="logradouro" type="text"
+                                            style="text-transform: uppercase;"
+                                            [formControl]="formCadastroCliente.controls.logradouro"
+                                            formControlName="logradouro" maxlength="50" />
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-2">
+                                    <div class="form-group">
+                                        <label for="inputbairro">Bairro</label>
+                                        <input class="form-control" name="bairro" id="bairro" type="text"
+                                            style="text-transform: uppercase;"
+                                            [formControl]="formCadastroCliente.controls.bairro" formControlName="bairro"
+                                            maxlength="20" />
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-2">
+                                    <div class="form-group">
+                                        <label for="inputcomplemento">Complemento</label>
+                                        <input class="form-control" name="complemento" id="complemento" type="text"
+                                            style="text-transform: uppercase;"
+                                            [formControl]="formCadastroCliente.controls.complemento"
+                                            formControlName="complemento" maxlength="20" />
+                                    </div>
+                                </div>                               
+                            </div>
+                            <div class="form-row align-items-center">
+                                <div class="form-group col-md-2">
+                                    <div class="form-group">
+                                        <label for="inputsenha">Senha*</label>
+                                        <input class="form-control" name="senha" id="senha" type="text"
+                                            [formControl]="formCadastroCliente.controls.senha" formControlName="senha" maxlength="10" />
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <div class="form-group">
+                                        <label for="exampleInputestado">Estado*</label>
+                                        <select class="form-control" id="estado"
+                                            (change)="buscaCidade(formCadastroCliente.value)"
+                                            [formControl]="formCadastroCliente.controls.estado"
+                                            formControlName="estado">
+                                            <option value="null" selected>SELECIONE</option>
+                                            <option *ngFor="let estado of listaEstado" value="{{ estado.id }}">
+                                                {{ estado.descricao | uppercase}}
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <div class="form-group">
+                                        <label for="exampleInputcidade">Cidade*</label>
+                                        <select class="form-control" id="cidade"
+                                            [formControl]="formCadastroCliente.controls.cidade"
+                                            formControlName="cidade">
+                                            <option value="null" selected>SELECIONE</option>
+                                            <option *ngFor="let cidade of listaCidade" value="{{ cidade.id }}">
+                                                {{ cidade.descricao | uppercase}}
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>                               
+                            </div>                           
+                        </div>
+                        <div class="form-row m-3">
+                            <div class="text-right navbar-collapse">
+                                <button class="btn btn-primary" (click)="fecharForm()">
+                                    FECHAR
+                                </button>
+                                <button class="btn btn-success" (click)="saveFormCadastro(formCadastroCliente.value)">
+                                    SALVAR
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </nb-card>
+        </div>
+    </div>
+</div>

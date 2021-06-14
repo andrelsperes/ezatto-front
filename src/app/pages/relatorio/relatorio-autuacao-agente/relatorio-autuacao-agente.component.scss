@@ -1,0 +1,64 @@
+@import '../../../@theme/styles/themes';
+@include nb-install-component() {
+  nb-card {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.datatable-body-box-actions a{
+  line-height: 25px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.app-box {
+  background: #Fff;
+  padding: 15px;
+  margin-bottom: 15px;
+  box-shadow: 0 1px 2px 0 rgba(50,50,50,.2);
+}
+
+.example-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .box-form-buttons {
+    width: 100%;
+    text-align: left;
+}
+
+.botao-amplus {
+  padding: 10px 25px;
+  font-size: 14px;
+  font-weight: bold;
+  //border: 0;
+  cursor: pointer;
+  background: #bebebe;
+}
+
+.verde {
+  background-color: #72DCAC;
+  color: #333;
+}
+
+.azul {
+  background-color: #58ACFA;
+  color: #333;
+}
+
+button{
+  margin: 0 10px;
+}
+
+.alert-form {
+  padding: 6px 2px 2px !important;
+  font-size: 13px;
+  font-weight: bold;
+  text-transform: uppercase;
+  box-shadow: 0 0 0 .2rem rgba(115, 255, 0, 0.192);
+  background: rgba(0, 140, 255, 0.192) !important;
+  color: rgba(255, 0, 0, 0.986) !important;
+  text-align: center;
+  margin-top: 6px;
+} 

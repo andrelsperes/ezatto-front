@@ -1,0 +1,35 @@
+<div class="text-center">
+  <div class="col-md-12 col-xs-12">
+    <div class="row">
+      <div class="col-md-12 col-xs-12">
+        <nb-card>
+          <div class="text-center sidebar-header">
+            <div class="col-md-12 col-xs-12">
+              <!--<img class="p-4 w-75" src="assets/images/logo_multa.jpg" id="icon" alt="User Icon" />-->
+            </div>
+          </div>
+          <div class="dialog-body sidebar-header">
+            <form id="form-login" [formGroup]="loginForm">
+              <div class="form-group">
+                <div class="text-center">
+                  <input type="text" [formControl]="loginForm.controls.login" formControlName="login" id="login"
+                    class="fadeIn second" name="login" placeholder="Login" maxlength="80" style="width: 250px" />
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="text-center">
+                  <input type="password" [formControl]="loginForm.controls.password" formControlName="password"
+                    id="password" class="fadeIn third" name="password" placeholder="Senha" maxlength="100"
+                    style="width: 250px" />
+                </div>
+              </div>
+              <div class="text-center">
+                <input type="submit" class="fadeIn fourth" value="Entrar" (click)="login()" />
+              </div>
+            </form>
+          </div>
+        </nb-card>
+      </div>
+    </div>
+  </div>
+</div>

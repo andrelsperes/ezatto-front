@@ -1,0 +1,46 @@
+<div class="box-content">
+  <div class="row">
+    <div class="col-md-12 col-xs-12">
+      <div class="row">
+        <div class="col-md-12 col-xs-12 col-sm-12">
+          <nb-card>
+            <nb-card-body>
+              <div class="col-md-6 col-xs-12">
+                <div class="text-center">
+                  <h6>Quantidade de Infrações Por Dia</h6>
+                </div>
+              </div>
+              <div class="d-flex justify-content-center">
+                <ngx-charts-bar-vertical [view]="view" [scheme]="colorScheme" [results]="autuacaoDiasRowData"
+                  [gradient]="gradient" [xAxis]="showXAxis" [yAxis]="showYAxis" [showXAxisLabel]="showXAxisLabel"
+                  [showYAxisLabel]="showYAxisLabel" [xAxisLabel]="dia" [yAxisLabel]="quantidades">
+                </ngx-charts-bar-vertical>
+              </div>
+              <div class="col-md-6 col-xs-12">
+                <div class="text-center">
+                  <h6>Quantidade de Autuação Por Mês</h6>
+                </div>
+              </div>
+              <div class="d-flex justify-content-center">
+                <ngx-charts-bar-horizontal [view]="view" [scheme]="colorScheme" [results]="autuacaoMesRowData"
+                  [gradient]="gradient" [xAxis]="showXAxis" [yAxis]="showYAxis" [showXAxisLabel]="showXAxisLabel"
+                  [showYAxisLabel]="showYAxisLabel" [xAxisLabel]="mesQdta" [yAxisLabel]="mes">
+                </ngx-charts-bar-horizontal>
+              </div>
+              <div class="col-md-5 col-xs-12">
+                <div class="text-center">
+                  <h6>Motivos de Infrações</h6>
+                </div>
+              </div>
+              <div class="d-flex justify-content-center">
+                <ngx-charts-pie-chart [view]="view" [scheme]="colorScheme" [results]="motivoInfracaoRowData"
+                  [gradient]="gradient" [legend]="showLegend" [legendPosition]="'below'">
+                </ngx-charts-pie-chart>
+              </div>
+            </nb-card-body>
+          </nb-card>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

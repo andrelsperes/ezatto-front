@@ -1,0 +1,65 @@
+<div class="container col-md-12">
+	<div class="row ">
+      
+        <div class=" list-left col-md-5">
+            <div class="well custom-list" style="height: 100%;">
+                <ul class="list-group list-group-flush border" style="min-height: 180px; max-height: 180px; overflow: auto">
+                    <li class="list-group-item list-group-item-action border"
+                     [class.active]="item.active" id="list-messages-list" 
+                     data-toggle="list" *ngFor="let item of listLeft"
+                     value="item.id" (click)="selectedlistLeft(item)"
+                      >
+                        {{ item.descricao }}
+                     </li>
+                </ul>
+            </div>
+        </div>
+
+        <div *ngIf="innerWidth>800" class="list-arrows col-md-2 col-sm-1 text-center">
+            <div class="py-3">
+                <button (click)='add()' class="btn btn-primary btn-sm move-left  w-100">
+                    <span><i class="fas fa-chevron-right"></i></span>
+                </button>
+            </div>
+                       
+            <div class="py-3">
+                <button (click)='remove()' class="btn btn-primary btn-sm move-right w-100">
+                    <span ><i class="fas fa-chevron-left"></i></span>
+                </button>
+            </div>
+           
+        </div>
+
+        <div *ngIf="innerWidth<800" class="list-arrows col-md-12 col-sm-12 text-center my-3">
+
+            <div class="py-2">
+                <button (click)='add()' class="btn btn-primary btn-sm move-left mr-2">
+                    <span><i class="fas fa-chevron-down"></i></span>
+                </button>
+
+                  
+                <button (click)='remove()' class="btn btn-primary btn-sm move-right">
+                    <span ><i class="fas fa-chevron-up"></i></span>
+                </button>
+
+             
+            </div>
+            
+        </div>
+
+         <div class=" list-right col-md-5">
+            <div class="well custom-list" style="height: 100%;">
+                <ul class="list-group list-group-flush border" style="min-height: 180px; max-height: 180px; overflow: auto">
+                    <li class="list-group-item list-group-item-action border"
+                     [class.active]="item.active" id="list-messages-list" 
+                     data-toggle="list" *ngFor="let item of listRight"
+                     value="item.id" (click)="selectedlistRight(item)"
+                      >
+                        {{ item.descricao }}
+                     </li>
+                </ul>
+            </div>
+        </div>
+
+	</div>
+</div>
