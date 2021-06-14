@@ -10,6 +10,6 @@
 
 export const environment = {
   production: false,
-  url_login:  'https://ezatto-core.herokuapp.com/',
+  url_login:  'https://ezatto-core.herokuapp.com',
   url_server: 'https://ezatto-core.herokuapp.com/api',
 };
