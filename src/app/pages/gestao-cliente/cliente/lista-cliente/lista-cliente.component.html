@@ -39,7 +39,7 @@
                   <button class="btn btn-success mb-3 m-2" (click)="opencadastro()">
                     CADASTRAR
                   </button>
-                </div>               
+                </div>
               </div>
             </div>
           </form>
@@ -71,20 +71,13 @@
                   </div>
                 </ng-template>
               </ngx-datatable-column>
-              <ngx-datatable-column name="QTD Agentes" prop="qtdAgentes">
-                <ng-template ngx-datatable-cell-template let-row="row">
-                  <div class="text-center">
-                    {{ row.qtdAgentes }}
-                  </div>
-                </ng-template>
-              </ngx-datatable-column>
               <ngx-datatable-column name="Data Vigência" prop="dtVigencia">
                 <ng-template ngx-datatable-cell-template let-row="row">
                   <div class="text-center">
                     {{ row.dtVigencia | date:'dd/MM/yyyy'}}
-                  </div>                 
+                  </div>
                 </ng-template>
-              </ngx-datatable-column>             
+              </ngx-datatable-column>
 
               <ngx-datatable-row-detail [rowHeight]="50" #myDetailRow>
 
@@ -103,7 +96,7 @@
                       Total de Registros: {{rowCount}}
                     </div>
                   </div>
-               
+
                   <datatable-pager [pagerLeftArrowIcon]="'fa fa-angle-double-left'"
                     [pagerRightArrowIcon]="'fa fa-angle-double-right '" [pagerPreviousIcon]="'fa fa-angle-left'"
                     [pagerNextIcon]="'fa fa-angle-right '" [page]="curPage" [size]="pageSize" [count]="rowCount"

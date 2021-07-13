@@ -107,7 +107,6 @@ export class CadastroClienteComponent implements OnInit {
       dataCadastro: [null, Validators.required],
       dataVigencia: [null],
       valorPlano: [null],
-      qtdAgente: [null, Validators.required],
       status: [null, Validators.required],
       telefone: [null, Validators.required],
       nomeResponsavel: [null, Validators.required],
@@ -187,7 +186,6 @@ export class CadastroClienteComponent implements OnInit {
       this.formCadastroCliente.controls['telefone'].setValue(data.content[0].telefone);
       this.formCadastroCliente.controls['nomeResponsavel'].setValue(data.content[0].nomeResposavel);
       this.formCadastroCliente.controls['numero'].setValue(data.content[0].numero);
-      this.formCadastroCliente.controls['qtdAgente'].setValue(data.content[0].qtdAgentes);
       this.formCadastroCliente.controls['logradouro'].setValue(data.content[0].rua);
       this.formCadastroCliente.controls['valorPlano'].setValue(data.content[0].valorPlano);
       this.formCadastroCliente.controls['estado'].setValue(data.content[0].estado);
@@ -273,7 +271,6 @@ export class CadastroClienteComponent implements OnInit {
       estado: data.estado.toUpperCase(),
       nomeFantasia: data.nomeFantasia.toUpperCase(),
       nomeResposavel: data.nomeResponsavel.toUpperCase(),
-      qtdAgentes: data.qtdAgente,
       razaoSocial: data.razaoSocial.toUpperCase(),
       rua: data.logradouro.toUpperCase(),
       telefone: data.telefone,
@@ -307,7 +304,6 @@ export class CadastroClienteComponent implements OnInit {
         dataCadastro: [null, Validators.required],
         dataVigencia: [null],
         valorPlano: [null],
-        qtdAgente: [null, Validators.required],
         status: [null, Validators.required],
         telefone: [null, Validators.required],
         nomeResponsavel: [null, Validators.required],

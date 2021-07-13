@@ -146,7 +146,7 @@ export class UploadArquivosComponent implements OnInit, OnDestroy {
 
     }
 
-    this.router.navigate(['../consulta-autuacao'], { relativeTo: this.route, queryParams: params });
+    this.router.navigate(['../consulta-notas'], { relativeTo: this.route, queryParams: params });
   }
 
   previousPage() {

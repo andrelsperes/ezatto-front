@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { GestaoNotasComponent } from './gestao-notas.component';
-import { ConsultaAutuacaoComponent } from './consulta-autuacao/consulta-autuacao.component';
+import { ConsultaNotaComponent } from './consulta-notas/consulta-nota.component';
 import { UploadArquivosComponent } from './upload-arquivos/upload-arquivos.component';
 import { VisualizarAnexoComponent } from './visualizar-anexo/visualizar-anexo.component';
 
@@ -16,8 +16,8 @@ const routes: Routes = [{
 
     },
     {
-      path: 'consulta-autuacao',
-      component: ConsultaAutuacaoComponent,
+      path: 'consulta-notas',
+      component: ConsultaNotaComponent,
 
     },
     {
@@ -44,7 +44,7 @@ export class GestaoNotasRoutingModule { }
 
 export const routedComponents = [
   GestaoNotasComponent,
-  ConsultaAutuacaoComponent,
+  ConsultaNotaComponent,
   UploadArquivosComponent,
   VisualizarAnexoComponent,
 ];

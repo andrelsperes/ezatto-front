@@ -11,11 +11,11 @@ import { ConsultaAutuacaoService } from './consulta-autuacao.service';
 
 @Component({
   selector: 'ngx-consulta-autuacao',
-  templateUrl: './consulta-autuacao.component.html',
-  styleUrls: ['./consulta-autuacao.component.scss'],
+  templateUrl: './consulta-nota.component.html',
+  styleUrls: ['./consulta-nota.component.scss'],
 })
 
-export class ConsultaAutuacaoComponent implements OnInit {
+export class ConsultaNotaComponent implements OnInit {
 
   public formAutoInfracao = null;
   public id = null;
@@ -222,7 +222,7 @@ export class ConsultaAutuacaoComponent implements OnInit {
       parecer: data.descParecer.toUpperCase(),
 
     }
-    
+
     this.spinnerService.show();
     this.service.setaParecer(
       register,
