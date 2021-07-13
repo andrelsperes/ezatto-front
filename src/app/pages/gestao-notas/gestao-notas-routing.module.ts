@@ -40,5 +40,4 @@ export const routedComponents = [
   GestaoNotasComponent,
   ImportarNotasComponent,
   UploadArquivosComponent,
-  VisualizarAnexoComponent,
 ];
