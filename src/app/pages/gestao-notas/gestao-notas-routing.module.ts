@@ -4,7 +4,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { GestaoNotasComponent } from './gestao-notas.component';
 import { ImportarNotasComponent } from './importar-notas/importar-notas.component';
 import { UploadArquivosComponent } from './upload-arquivos/upload-arquivos.component';
-import { VisualizarAnexoComponent } from './visualizar-anexo/visualizar-anexo.component';
 
 const routes: Routes = [{
   path: '',
