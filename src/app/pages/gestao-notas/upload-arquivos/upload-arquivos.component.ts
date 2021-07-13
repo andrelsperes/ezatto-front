@@ -13,7 +13,7 @@ import { NgxSpinnerService } from 'ngx-spinner';
 import { NotificationsService } from 'angular2-notifications';
 
 @Component({
-  selector: 'ngx-lista-autuacao',
+  selector: 'ngx-upload-arquivos',
   templateUrl: './upload-arquivos.component.html',
   styleUrls: ['./upload-arquivos.component.scss']
 })
@@ -154,7 +154,9 @@ export class UploadArquivosComponent implements OnInit, OnDestroy {
   }
 
   openImportar() {
-      this.router.navigate(['../importar-notas']);
+    let params = {
+    }
+      this.router.navigate(['../importar-notas'], { relativeTo: this.route, queryParams: params });
   }
 }
 
