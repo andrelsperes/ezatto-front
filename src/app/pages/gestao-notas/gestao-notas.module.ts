@@ -13,7 +13,6 @@ import { GestaoNotasComponent } from './gestao-notas.component';
 import { GestaoNotasRoutingModule } from './gestao-notas-routing.module';
 import { ImportarNotasComponent } from './importar-notas/importar-notas.component';
 import { UploadArquivosComponent } from './upload-arquivos/upload-arquivos.component';
-import { VisualizarAnexoComponent } from './visualizar-anexo/visualizar-anexo.component';
 
 @NgModule({
   imports: [

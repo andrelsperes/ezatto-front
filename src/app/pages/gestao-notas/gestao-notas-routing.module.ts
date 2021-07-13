@@ -20,11 +20,6 @@ const routes: Routes = [{
       component: ImportarNotasComponent,
 
     },
-    {
-      path: 'visualizar-anexo',
-      component: VisualizarAnexoComponent,
-
-    },
 
   ],
 
