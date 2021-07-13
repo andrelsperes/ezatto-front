@@ -20,36 +20,31 @@
               <div class="form-row align-items-center">
                 <div class="col-md-12 col-xs-12">
                   <div class="text-center">
-                    <h6>Aqui é onde usuário busca e localiza as atuações e suas situações com a ajuda de filtros.</h6>
+                    <h6>Aqui é onde usuário busca e localiza as notas importadas com a ajuda de filtros.</h6>
                   </div>
                 </div>
                 <div class="form-group col-md-3">
                   <div class="form-group">
-                    <label for="exampleInputCpf">CPF</label>
-                    <input class="form-control" name="cpf" id="cpf" type="text" [dropSpecialCharacters]="true"
-                      [formControl]="formlistaAutuacao.controls.cpf" formControlName="cpf" mask="000.000.000-00"
-                      maxlength="14"/>
-                  </div>
-                  <div *ngIf="formlistaAutuacao.get('cpf').getError('cpfNotValid')">
-                    O CPF não é válido.
+                    <label for="exampledataInicio">Data Início</label>
+                    <my-date-picker name="mydate" formControlName="dataInicio" maxlength="10"
+                                    [options]="myDatePickerOptions">
+                    </my-date-picker>
                   </div>
                 </div>
                 <div class="form-group col-md-3">
                   <div class="form-group">
-                      <label for="exampleInputstatus">Status</label>
-                      <select class="form-control" id="status"
-                          [formControl]="formlistaAutuacao.controls.status"
-                          formControlName="status">
-                          <option value="null" selected>SELECIONE</option>
-                          <option *ngFor="let status of listaStatus" value="{{ status.status }}">
-                              {{ status.descricao }}
-                          </option>
-                      </select>
+                    <label for="exampledataFim">Data Fim</label>
+                    <my-date-picker name="mydate" formControlName="dataFim" maxlength="10"
+                                    [options]="myDatePickerOptions">
+                    </my-date-picker>
                   </div>
-              </div>
+                </div>
                 <div class="text-right">
                   <button class="btn btn-primary mb-3 m-2" (click)="pesquisarcliente(formlistaAutuacao.value)">
                     PESQUISAR
+                  </button>
+                  <button class="btn btn-success mb-3 m-2" (click)="openImportar()">
+                    IMPORTAR NOTAS
                   </button>
                 </div>
               </div>
@@ -65,24 +60,7 @@
             [messages]="{emptyMessage: 'Sem dados...'}" [limit]="tableLimit" [externalPaging]="true"
             [count]="datatablePagination.totalElements" [offset]="datatablePagination.currentPage">
 
-              <ngx-datatable-column [sortable]="false" name="Ações" [canAutoResize]="true">
-                <ng-template ngx-datatable-cell-template let-row="row">
-                  <div class="datatable-body-box-actions">
-                    <a class="home-icon" (click)="visualizarAutuacao(row)" title="Visualizar Atuação">
-                      <i class="fa fa-edit"></i>
-                    </a>
-                  </div>
-                </ng-template>
-              </ngx-datatable-column>
-
-              <ngx-datatable-column name="Nome" prop="usuario.nome"></ngx-datatable-column>
-              <ngx-datatable-column name="CPF" prop="usuario.cpf">
-                <ng-template ngx-datatable-cell-template let-row="row">
-                  <div class="text-center">
-                    {{ row.usuario.cpf }}
-                  </div>
-                </ng-template>
-              </ngx-datatable-column>
+              <ngx-datatable-column name="Arquivo" prop="usuario.nome"></ngx-datatable-column>
               <ngx-datatable-column name="Status" prop="status.descricao">
                 <ng-template ngx-datatable-cell-template let-row="row">
                   <div class="text-center">
@@ -90,14 +68,14 @@
                   </div>
                 </ng-template>
               </ngx-datatable-column>
-              <ngx-datatable-column name="Email" prop="usuario.email">
+              <ngx-datatable-column name="Responsável pela importação" prop="usuario.email">
                 <ng-template ngx-datatable-cell-template let-row="row">
                   <div class="text-center">
                     {{ row.usuario.email }}
                   </div>
                 </ng-template>
               </ngx-datatable-column>
-              <ngx-datatable-column name="Data Cadastro" prop="usuario.dtCadastro">
+              <ngx-datatable-column name="Data Importação" prop="usuario.dtCadastro">
                 <ng-template ngx-datatable-cell-template let-row="row">
                   <div class="text-center">
                     {{ row.usuario.dtCadastro | date:'dd/MM/yyyy'}}

@@ -11,7 +11,7 @@ import { NgxMaskModule } from 'ngx-mask';
 import { NgxMyDatePickerModule } from 'ngx-mydatepicker';
 import { GestaoNotasComponent } from './gestao-notas.component';
 import { GestaoNotasRoutingModule } from './gestao-notas-routing.module';
-import { ConsultaNotaComponent } from './consulta-notas/consulta-nota.component';
+import { ImportarNotasComponent } from './importar-notas/importar-notas.component';
 import { UploadArquivosComponent } from './upload-arquivos/upload-arquivos.component';
 import { VisualizarAnexoComponent } from './visualizar-anexo/visualizar-anexo.component';
 
@@ -48,9 +48,8 @@ import { VisualizarAnexoComponent } from './visualizar-anexo/visualizar-anexo.co
   ],
   declarations: [
     GestaoNotasComponent,
-    ConsultaNotaComponent,
+    ImportarNotasComponent,
     UploadArquivosComponent,
-    VisualizarAnexoComponent,
 
   ],
   entryComponents:[

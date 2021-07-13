@@ -1,0 +1,50 @@
+<div class="box-content">
+    <div class="row">
+        <div class="col-md-12 col-xs-12">
+            <nb-card>
+                <nb-card-header class="amplus-header mat-autocomplete-panel">
+                    <div class="row">
+                        <div class="back-link px-2">
+                            <a (click)="previousPage()" aria-label="Back">
+                                <nb-icon icon="arrow-back" title="Voltar"></nb-icon>
+                            </a>
+                        </div>
+                        <div class="title">
+                            Importação de notas fiscais
+                        </div>
+                    </div>
+                </nb-card-header>
+                <div class="dialog-body">
+                    <form id="form-auto-infracao" [formGroup]="formAutoInfracao">
+                      <div class="col-md-12 py-2">
+                        <div class="form-group">
+                          <div class="row">
+                            <div class="col-md-10">
+
+                              <div>
+                                <div class="input-group">
+                                  <input #fileInput class='custom-file-input' type='file' id='inputGroupFile01' accept='.csv'
+                                         (change)='csvImport($event.target.files)'>
+                                  <span class="input-group-addon primary">
+                          <label #fileLabel class='custom-file-label' for='inputGroupFile01'>Selecione o arquivo...</label>
+                        </span>
+                                </div>
+                              </div>
+
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                        <div class="form-row m-3">
+                            <div class="text-right navbar-collapse">
+                                <button class="btn btn-success m-lg-3" (click)="salvaAutuacao(formAutoInfracao.value)">
+                                    SALVAR
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </nb-card>
+        </div>
+    </div>
+</div>

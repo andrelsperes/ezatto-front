@@ -5,7 +5,7 @@ import { HttpService } from '../../../shared/services/http/http-client.service';
 @Injectable({
   providedIn: 'root'
 })
-export class VisualizarAnexoService {
+export class ImportarNotasService {
 
   constructor(
     private httpService: HttpService
@@ -15,12 +15,21 @@ export class VisualizarAnexoService {
 
     this.httpService.doGet('/autuacao/findById', data, successHandle, errorHandle);
 
-  }   
-
+  }
   autuacaoAnexo(data: any, successHandle:Function, errorHandle:Function) {
 
     this.httpService.doGet('/autuacao/anexo', data, successHandle, errorHandle);
 
-  }   
-  
+  }
+  createAutuacao(data: any, successHandle: Function, errorHandle: Function) {
+
+    return this.httpService.doPost('/autuacao', data, successHandle, errorHandle);
+
+  }
+  setaParecer(data: any, successHandle: Function, errorHandle: Function) {
+
+    return this.httpService.doPost('/autuacao/setaParecer', data, successHandle, errorHandle);
+
+  }
+
 }
