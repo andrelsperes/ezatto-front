@@ -24,6 +24,13 @@ export class ImportarNotasComponent implements OnInit {
   public id = null;
   public tableLimit = 10;
 
+  selectedFiles: FileList;
+  currentFileUpload: File;
+
+  selectedFile = null;
+  progress: { percentage: number } = { percentage: 0 };
+
+
 
   constructor(
     private formBuilder: FormBuilder,
@@ -94,25 +101,26 @@ export class ImportarNotasComponent implements OnInit {
 
   }
 
-  salvaAutuacao(data) {
+  upload() {
+    this.spinnerService.show();
+    this.progress.percentage = 0;
+    this.currentFileUpload = this.selectedFiles.item(0);
 
     let register = {
-
-      descricao: data.descMotivo.toUpperCase(),
-      idAutuacao: this.id,
-      parecer: data.descParecer.toUpperCase(),
-
+      nomeArquivo: this.currentFileUpload.name,
+      arquivo: this.currentFileUpload
     }
 
-    this.spinnerService.show();
-    this.service.setaParecer(
+    this.service.uploadNota(
       register,
       (response) => {
+        this.selectedFiles = undefined;
         this.spinnerService.hide();
         this.notifications.success('Operação salvo com sucesso.');
         this.previousPage();
       },
       (error) => {
+        this.selectedFiles = undefined;
         this.spinnerService.hide();
         this.notifications.error(error.message);
       }
@@ -121,6 +129,10 @@ export class ImportarNotasComponent implements OnInit {
 
   previousPage() {
     this.location.back();
+  }
+
+  selectFile(event) {
+    this.selectedFile = event.target.files[0];
   }
 
 }

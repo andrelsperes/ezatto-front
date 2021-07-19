@@ -11,24 +11,9 @@ export class ImportarNotasService {
     private httpService: HttpService
   ) { }
 
-  buscaInfracao(data: any, successHandle:Function, errorHandle:Function) {
+  uploadNota(data: any, successHandle: Function, errorHandle: Function) {
 
-    this.httpService.doGet('/autuacao/findById', data, successHandle, errorHandle);
-
-  }
-  autuacaoAnexo(data: any, successHandle:Function, errorHandle:Function) {
-
-    this.httpService.doGet('/autuacao/anexo', data, successHandle, errorHandle);
-
-  }
-  createAutuacao(data: any, successHandle: Function, errorHandle: Function) {
-
-    return this.httpService.doPost('/autuacao', data, successHandle, errorHandle);
-
-  }
-  setaParecer(data: any, successHandle: Function, errorHandle: Function) {
-
-    return this.httpService.doPost('/autuacao/setaParecer', data, successHandle, errorHandle);
+    return this.httpService.doPost('/nota', data, successHandle, errorHandle);
 
   }
 
