@@ -113,84 +113,12 @@
                                     </div>
                                 </div>
                             </div>
-                                <div class="form-row align-items-center">
-                                <div class="form-group col-md-2">
-                                    <div class="form-group">
-                                        <label for="exampleInputcep">CEP</label>
-                                        <input class="form-control" name="cep" id="cep" type="text"
-                                            [formControl]="formCadastroCliente.controls.cep" formControlName="cep"
-                                            mask="00000-000" maxlength="20" />
-                                    </div>
-                                </div>
-                                <div class="form-group col-md-2">
-                                    <div class="form-group">
-                                        <label for="inputnumero">Número</label>
-                                        <input class="form-control" name="numero" id="numero" type="text"
-                                            [formControl]="formCadastroCliente.controls.numero" formControlName="numero"
-                                            (keypress)="numberOnly($event)" maxlength="10" />
-                                    </div>
-                                </div>
-                                <div class="form-group col-md-4">
-                                    <div class="form-group">
-                                        <label for="inputlogradouro">Rua</label>
-                                        <input class="form-control" name="logradouro" id="logradouro" type="text"
-                                            style="text-transform: uppercase;"
-                                            [formControl]="formCadastroCliente.controls.logradouro"
-                                            formControlName="logradouro" maxlength="50" />
-                                    </div>
-                                </div>
-                                <div class="form-group col-md-2">
-                                    <div class="form-group">
-                                        <label for="inputbairro">Bairro</label>
-                                        <input class="form-control" name="bairro" id="bairro" type="text"
-                                            style="text-transform: uppercase;"
-                                            [formControl]="formCadastroCliente.controls.bairro" formControlName="bairro"
-                                            maxlength="20" />
-                                    </div>
-                                </div>
-                                <div class="form-group col-md-2">
-                                    <div class="form-group">
-                                        <label for="inputcomplemento">Complemento</label>
-                                        <input class="form-control" name="complemento" id="complemento" type="text"
-                                            style="text-transform: uppercase;"
-                                            [formControl]="formCadastroCliente.controls.complemento"
-                                            formControlName="complemento" maxlength="20" />
-                                    </div>
-                                </div>
-                            </div>
                             <div class="form-row align-items-center">
                                 <div class="form-group col-md-2">
                                     <div class="form-group">
                                         <label for="inputsenha">Senha*</label>
                                         <input class="form-control" name="senha" id="senha" type="text"
                                             [formControl]="formCadastroCliente.controls.senha" formControlName="senha" maxlength="10" />
-                                    </div>
-                                </div>
-                                <div class="form-group col-md-3">
-                                    <div class="form-group">
-                                        <label for="exampleInputestado">Estado*</label>
-                                        <select class="form-control" id="estado"
-                                            (change)="buscaCidade(formCadastroCliente.value)"
-                                            [formControl]="formCadastroCliente.controls.estado"
-                                            formControlName="estado">
-                                            <option value="null" selected>SELECIONE</option>
-                                            <option *ngFor="let estado of listaEstado" value="{{ estado.id }}">
-                                                {{ estado.descricao | uppercase}}
-                                            </option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="form-group col-md-4">
-                                    <div class="form-group">
-                                        <label for="exampleInputcidade">Cidade*</label>
-                                        <select class="form-control" id="cidade"
-                                            [formControl]="formCadastroCliente.controls.cidade"
-                                            formControlName="cidade">
-                                            <option value="null" selected>SELECIONE</option>
-                                            <option *ngFor="let cidade of listaCidade" value="{{ cidade.id }}">
-                                                {{ cidade.descricao | uppercase}}
-                                            </option>
-                                        </select>
                                     </div>
                                 </div>
                             </div>

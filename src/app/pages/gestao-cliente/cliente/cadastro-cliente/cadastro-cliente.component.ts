@@ -63,11 +63,11 @@ export class CadastroClienteComponent implements OnInit {
 
     let token = localStorage.getItem('bway-token');
 
-    this.service.buscaEstado(token, (response) => {
-      this.listaEstado = response;
-    }, (error) => {
-      this.notifications.error('Não foi possível buscar informações do cliente');
-    });
+    // this.service.buscaEstado(token, (response) => {
+    //   this.listaEstado = response;
+    // }, (error) => {
+    //   this.notifications.error('Não foi possível buscar informações do cliente');
+    // });
 
     if (this.idCliente != null) {
 
@@ -260,19 +260,13 @@ export class CadastroClienteComponent implements OnInit {
     }
 
     let register: any = {
-      bairro: data.bairro.toUpperCase(),
-      cep: data.cep,
-      cidade: data.cidade.toUpperCase(),
-      complemento: data.complemento.toUpperCase(),
       cpfCnpj: data.cpfCnpj,
       dtCadastro: data.dtCadastro,
       dtVigencia: data.dtVigencia,
       email: data.email.toUpperCase(),
-      estado: data.estado.toUpperCase(),
       nomeFantasia: data.nomeFantasia.toUpperCase(),
       nomeResposavel: data.nomeResponsavel.toUpperCase(),
       razaoSocial: data.razaoSocial.toUpperCase(),
-      rua: data.logradouro.toUpperCase(),
       telefone: data.telefone,
       valorPlano: data.valorPlano,
       senha: data.senha
