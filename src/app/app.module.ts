@@ -44,8 +44,6 @@ import { AuthenticationService } from './shared/services/authentication.service'
 import { HttpService } from './shared/services/http/http-client.service';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { TokenInterceptorService } from './shared/filters/token-interceptor.service';
-import { RelatorioModule } from './pages/relatorio/relatorio.module';
-import { RelatorioRoutingModule } from './pages/relatorio/relatorio-routing.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -83,8 +81,6 @@ import { RelatorioRoutingModule } from './pages/relatorio/relatorio-routing.modu
     GestaoUsuarioRoutingModule,
     GestaoNotasModule,
     GestaoNotasRoutingModule,
-    RelatorioModule,
-    RelatorioRoutingModule,
   ],
   providers:[
     { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptorService, multi: true},

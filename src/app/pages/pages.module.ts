@@ -13,8 +13,6 @@ import { GestaoNotasRoutingModule } from './gestao-notas/gestao-notas-routing.mo
 import { GestaoNotasModule } from './gestao-notas/gestao-notas.module';
 import { GestaoUsuarioRoutingModule } from './gestão-usuario/gestao-usuario-routing.module';
 import { GestaoUsuarioModule } from './gestão-usuario/gestao-usuario.module';
-import { RelatorioModule } from './relatorio/relatorio.module';
-import { RelatorioRoutingModule } from './relatorio/relatorio-routing.module';
 
 
 @NgModule({
@@ -33,8 +31,6 @@ import { RelatorioRoutingModule } from './relatorio/relatorio-routing.module';
     GestaoUsuarioRoutingModule,
     GestaoNotasModule,
     GestaoNotasRoutingModule,
-    RelatorioModule,
-    RelatorioRoutingModule,
   ],
   declarations: [
     PagesComponent,

@@ -5,6 +5,6 @@
  */
 export const environment = {
   production: true,
-  url_login:  'https://ezatto-core.herokuapp.com',
-  url_server: 'https://ezatto-core.herokuapp.com/api',
+  url_login:  'https://rsemisg6qu.us-east-1.awsapprunner.com',
+  url_server: 'https://rsemisg6qu.us-east-1.awsapprunner.com/api',
 };
